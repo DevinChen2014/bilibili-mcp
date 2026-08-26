@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "socialdatax-bilibili": {
+      "type": "streamable_http",
+      "url": "https://mcp.socialdatax.com/bilibili/mcp",
+      "headers": {
+        "Authorization": "Bearer <SOCIALDATAX_API_KEY>"
+      }
+    }
+  }
+}

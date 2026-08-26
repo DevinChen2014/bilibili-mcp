@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "socialdatax-bilibili": {
+      "url": "https://mcp.socialdatax.com/bilibili/mcp",
+      "headers": {
+        "Authorization": "Bearer ${env:SOCIALDATAX_API_KEY}"
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "socialdatax-bilibili": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-remote",
+        "https://mcp.socialdatax.com/bilibili/mcp",
+        "--header",
+        "Authorization: Bearer <SOCIALDATAX_API_KEY>"
+      ]
+    }
+  }
+}
