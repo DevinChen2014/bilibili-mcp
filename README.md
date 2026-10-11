@@ -11,7 +11,7 @@ This public listing provides connection metadata and client examples for the hos
 - Website and API Key access: <https://socialdatax.com/ai?from=github>
 - Registry name: `com.52choujiang/bilibili-insights`
 - Future registry name: `com.socialdatax/bilibili-insights`
-- Current public capability version: `0.1.2`
+- Current public capability version: `0.1.3`
 
 ## Scope
 
@@ -23,7 +23,9 @@ The public server card is the source of truth for descriptions and schemas. The 
 
 | Tool | Purpose |
 | --- | --- |
-| `socialdatax_get_points_balance` | Query the current API Key account balance. |
+| `bilibili_search_users` | Search users by keyword; supports opaque `page_token` continuation. |
+| `bilibili_search_suggestions` | Get search-box suggestions for a keyword; no pagination. |
+| `socialdatax_get_points_balance` | Query the current API Key account's SocialDataX points balance / 积分余额、剩余积分或点数. |
 | `bilibili_search_videos` | Search public videos; use when a search term is available, and continue with `page_token`. |
 | `bilibili_search_articles` | Search public articles; use when a search term is available, and continue with `page_token`. |
 | `bilibili_get_content_detail_by_id` | Read video, article, or dynamic details from a content ID. |
@@ -46,7 +48,7 @@ The public server card is the source of truth for descriptions and schemas. The 
 | `bilibili_submit_video_speech_text_by_bvid` | Submit transcript work from a BV ID. |
 | `bilibili_get_video_speech_text_job` | Check a submitted transcript job by `job_id`. |
 
-Search tools support opaque `page_token` pagination. When a Bilibili link or ID is already available, use the matching detail, comment, creator, or transcript tool instead of searching again.
+Video, article and user search tools support opaque `page_token` pagination. When a Bilibili link or ID is already available, use the matching detail, comment, creator, or transcript tool instead of searching again.
 
 ## Quick Start
 
@@ -73,3 +75,7 @@ Request or manage API access at <https://socialdatax.com/ai?from=github>. Never 
 - [server-card.json](server-card.json) is the directory metadata for this hosted service.
 - [mcp.json](mcp.json) is the command/stdio fallback configuration.
 - [SUBMISSION_CHECKLIST.md](SUBMISSION_CHECKLIST.md) records the publication checks.
+
+本地 `0.1.3` 候选新增 `bilibili_search_users`（用户搜索，支持 `page_token`）与 `bilibili_search_suggestions`（搜索联想，不分页）。尚未部署或发布 Registry，发布后需复验。
+
+用户搜索结果还包含投稿视频数 `posted_video_count`、认证文案 `verification_label` 和账号等级 `member_level`；计数、等级和认证文案不可用时均为 null。
