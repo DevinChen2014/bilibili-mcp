@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "socialdatax-bilibili": {
+      "type": "http",
+      "url": "https://mcp.socialdatax.com/bilibili/mcp",
+      "headers": {
+        "Authorization": "Bearer <SOCIALDATAX_API_KEY>",
+        "x-socialdatax-client": "lobehub",
+        "x-socialdatax-source-platform": "lobehub"
+      }
+    }
+  }
+}
