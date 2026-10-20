@@ -81,3 +81,19 @@ Request or manage API access at <https://socialdatax.com/ai?from=github>. Never 
 本地 `0.1.3` 候选新增 `bilibili_search_users`（用户搜索，支持 `page_token`）与 `bilibili_search_suggestions`（搜索联想，不分页）。尚未部署或发布 Registry，发布后需复验。
 
 用户搜索结果还包含投稿视频数 `posted_video_count`、认证文案 `verification_label` 和账号等级 `member_level`；计数、等级和认证文案不可用时均为 null。
+
+## Gemini CLI extension
+
+Install this service from its public GitHub repository:
+
+```sh
+gemini extensions install https://github.com/DevinChen2014/bilibili-mcp
+```
+
+When prompted, enter your own `SOCIALDATAX_API_KEY`. Get a key from [SocialDataX](https://socialdatax.com/ai?from=github); business tool calls consume SocialDataX credits. The extension connects directly to the existing hosted MCP endpoint and does not include the private service implementation.
+
+Verify the connection with `gemini mcp list`. To change the saved key, run:
+
+```sh
+gemini extensions config socialdatax-bilibili
+```
